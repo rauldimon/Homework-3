@@ -1,5 +1,6 @@
 # Homework-3
 ```js
+f//Создаём объект юзера через prompt
 function userInfo() {
   var userObj = {};
   do {
@@ -49,12 +50,14 @@ var users = [{
 ];
 
 
+//добовляем юзеров в существующий массив
 for (var i = 0; i < iter; i++) {
   users.push(userInfo());
 }
 
 console.log(users)
 
+//Делаем большой первую букву в first_name и last_name
 function bigFirstLetter(str) {
   return str[0].toUpperCase() + str.slice(1)
 }
@@ -64,12 +67,13 @@ for (var i = 0; i < users.length; i++) {
   users[i].last_name = bigFirstLetter(users[i].last_name);
 }
 
+//Сортируем юзеров по букве Е
 var userE = users.filter(function(sort) {
   return sort.first_name.charAt(0) == "E" || sort.last_name.charAt(0) == "E";
 });
 console.log(userE);
 
-
+//выбераем юзеров за 30 и сортируем их
 var userOld = users.filter(function(user) {
   var old = new Date().getTime() - new Date(user.birthday).getTime();
   return old > 30 * 365 * 86400 * 1000;
@@ -77,8 +81,8 @@ var userOld = users.filter(function(user) {
 
 userOld.sort(function(o, y) {
   var oldMen = new Date(o.birthday);
-  var youngMan = new Date(y.birthday)
-  return oldMen - youngMan
+  var youngMen = new Date(y.birthday)
+  return oldMen - youngMen
 })
 console.log(userOld);
 ```
