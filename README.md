@@ -1,6 +1,6 @@
 # Homework-3
 ```js
-f//Создаём объект юзера через prompt
+//Создаём объект юзера через prompt
 function userInfo() {
   var userObj = {};
   do {
